@@ -85,7 +85,7 @@
 git clone https://github.com/TechOGR/W-T-F---Weekend-Trading-Finance--.git
 
 # Entrar al directorio
-cd "W-T-F ( Weekend Trading Finance )"
+cd W-T-F---Weekend-Trading-Finance--
 
 # Instalar dependencias automáticamente
 pip install -r requirements.txt
