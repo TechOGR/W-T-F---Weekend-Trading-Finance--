@@ -82,7 +82,7 @@
 ### ⚡ Método 1: Instalación Express (Recomendado)
 ```bash
 # Clonar el repositorio
-git clone https://github.com/tu-usuario/W-T-F-Trading-Manager.git
+git clone https://github.com/TechOGR/W-T-F---Weekend-Trading-Finance--.git
 
 # Entrar al directorio
 cd "W-T-F ( Weekend Trading Finance )"
