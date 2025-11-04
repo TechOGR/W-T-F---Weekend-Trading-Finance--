@@ -1,0 +1,1 @@
+# Weekend Trading Finance - Módulo principal

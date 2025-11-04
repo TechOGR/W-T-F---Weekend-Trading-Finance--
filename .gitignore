@@ -1,0 +1,472 @@
+# 🚀 W-T-F Trading Manager - .gitignore Profesional
+# ================================================
+
+# =============================================================================
+# 🐍 PYTHON - Archivos y carpetas estándar de Python
+# =============================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# =============================================================================
+# 💾 BASES DE DATOS - Proteger datos sensibles
+# =============================================================================
+
+# SQLite databases
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+
+# Database backups
+*.sql
+*.sql.gz
+*.sql.zip
+*.dump
+
+# MongoDB
+*.mongodb
+
+# Redis
+dump.rdb
+
+# =============================================================================
+# 🎨 PYQT5 / GUI - Archivos específicos de PyQt5
+# =============================================================================
+
+# Qt Designer files
+*.ui
+*.ui.autosave
+
+# Qt Resource files
+*.qrc
+*_rc.py
+
+# Qt translations
+*.qm
+
+# PyQt5 generated files
+*_ui.py
+*_rc.py
+
+# Qt Creator
+*.pro.user
+*.pro.user.*
+*.qbs.user
+*.qbs.user.*
+*.moc
+moc_*.cpp
+qrc_*.cpp
+ui_*.h
+*.qmlc
+*.jsc
+
+# =============================================================================
+# 🏗️ BUILD / COMPILACIÓN - Archivos de construcción
+# =============================================================================
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+
+# Visual Studio
+.vs/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+
+# Eclipse
+.project
+.cproject
+.pydevproject
+
+# =============================================================================
+# 📊 DATOS DE TRADING - Archivos sensibles del proyecto
+# =============================================================================
+
+# Trading data files
+trading_data_backup_*.json
+Weekend-Saved/*.json
+*.trading
+*.trade
+*.portfolio
+
+# Financial data exports
+*.csv
+*.xlsx
+*.xls
+*.ods
+
+# Configuration files with sensitive data
+config.ini
+settings.json
+*.key
+*.pem
+*.p12
+*.pfx
+
+# =============================================================================
+# 🖥️ SISTEMA OPERATIVO - Archivos del sistema
+# =============================================================================
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+*.orig
+*.swp
+*~
+.DS_Store
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# macOS
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Linux
+.directory
+.Trash-*
+.nfs*
+
+# =============================================================================
+# 📝 EDITORES / IDES - Archivos de desarrollo
+# =============================================================================
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+.history/
+
+# PyCharm
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+.sublime/
+
+# Atom
+.atom/
+
+# Vim
+*.swo
+*.swn
+*.swm
+*.swl
+
+# Emacs
+*~
+#*#
+.#*
+
+# Notepad++
+nppBackup/
+
+# =============================================================================
+# 🌐 WEB / DEPENDENCIAS - Archivos web y dependencias
+# =============================================================================
+
+# Node.js (si usas herramientas web)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn-integrity
+
+# Bower
+bower_components/
+
+# =============================================================================
+# 📁 ARCHIVOS TEMPORALES - Limpieza general
+# =============================================================================
+
+# Temporary files
+*.tmp
+*.temp
+*.tempfile
+*.lock
+*.pid
+*.seed
+*.pid.lock
+
+# Log files
+*.log
+logs/
+log/
+
+# Cache directories
+.cache/
+*.cache
+.cache/
+
+# Backup files
+*.backup
+*.bak
+*.old
+*.orig
+*.copy
+*.duplicate
+
+# Auto-generated files
+auto_generated/
+generated/
+*_generated.py
+
+# =============================================================================
+# 🚫 ARCHIVOS PERSONALES - Excluir archivos personales del desarrollador
+# =============================================================================
+
+# Personal files
+personal/
+private/
+secret/
+confidential/
+
+# Development notes
+dev_notes/
+notes/
+todo/
+*.todo
+*.notes
+
+# Screenshots and recordings
+screenshots/
+recordings/
+captures/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.tiff
+*.mp4
+*.avi
+*.mov
+
+# =============================================================================
+# 📊 ARCHIVOS ESPECÍFICOS DEL PROYECTO - Ajustar según necesidad
+# =============================================================================
+
+# Keep database schema but ignore actual data
+!database_schema.sql
+*.db
+*.sqlite
+*.sqlite3
+
+# Keep requirements but ignore virtual environments
+!requirements.txt
+!requirements_*.txt
+
+# Keep main files but ignore tests
+!main.py
+!start_*.py
+test_*.py
+*_test.py
+tests/
+testing/
+
+# =============================================================================
+# 🎯 EXCEPCIONES - Archivos que DEBEN estar en el repositorio
+# =============================================================================
+
+# Documentation
+!README.md
+!LICENSE
+!CHANGELOG.md
+!CONTRIBUTING.md
+
+# Configuration examples
+!config.example.ini
+!settings.example.json
+
+# Database schema
+!database/schema.sql
+!database/migrations/
+
+# Assets and resources
+!assets/
+!resources/
+!icons/
+!images/
+
+# Source code (obviously)
+!src/
+!main.py
+
+# =============================================================================
+# 📝 NOTAS PARA EL DESARROLLADOR
+# =============================================================================
+
+# Este .gitignore está diseñado para:
+# 1. Proteger datos sensibles (bases de datos, configuraciones)
+# 2. Evitar archivos compilados y temporales
+# 3. Mantener el repositorio limpio y profesional
+# 4. Facilitar la colaboración en equipo
+# 5. Prevenir filtración de información personal/confidencial
+
+# Si necesitas agregar archivos específicos del proyecto:
+# 1. Agrega la regla de exclusión al final
+# 2. Comenta el propósito
+# 3. Asegúrate de no comprometer información sensible
+
+# Para ver qué archivos están siendo ignorados:
+# git status --ignored
+
+# Para limpiar archivos ignorados localmente:
+# git clean -X -f (cuidado: esto elimina archivos!)
+
+# =============================================================================
