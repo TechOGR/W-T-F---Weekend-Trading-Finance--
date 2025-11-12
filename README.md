@@ -1,6 +1,6 @@
 # 🚀 W-T-F (Weekend Trading Finance) Trading Manager v2.0
 
-## 📊 Tu Asistente Personal de Trading Semanal con Inteligencia Artificial
+## 📊 Tu Asistente Personal de Trading Semanal con Inteligencia Artificial ( xd solo da consejos )
 
 <div align="center">
 
@@ -21,13 +21,13 @@
 
 ## 🌟 ¿Qué es W-T-F Trading Manager?
 
-**W-T-F Trading Manager** es una aplicación de escritorio profesional diseñada para traders que quieren llevar un control detallado de su rendimiento semanal. Con una interfaz moderna y análisis impulsado por inteligencia artificial, esta herramienta te ayudará a tomar decisiones más inteligentes en tu trading.
+**W-T-F Trading Manager** es una aplicación de escritorio profesional diseñada para traders que quieren llevar un control detallado de su rendimiento semanal. Con una interfaz moderna y análisis impulsado por inteligencia artificial, esta herramienta te ayudará si no eres aún rentable en el trading, a seguir un plan de trading semanal para mejorar tu rendimiento.
 
 ### 💡 La solución perfecta para:
 - 📈 Traders de fin de semana
 - 📊 Gestión de portafolios personales
 - 🎯 Análisis de rendimiento semanal
-- 🤖 Obtención de insights inteligentes
+- 🤖 Frases y consejos míos
 - 📱 Control desde tu escritorio
 
 ---
@@ -82,10 +82,10 @@
 ### ⚡ Método 1: Instalación Express (Recomendado)
 ```bash
 # Clonar el repositorio
-git clone https://github.com/TechOGR/W-T-F---Weekend-Trading-Finance--.git
+git clone https://github.com/TechOGR/WTF_WeekendTradingFinance.git
 
 # Entrar al directorio
-cd W-T-F---Weekend-Trading-Finance--
+cd WTF_WeekendTradingFinance
 
 # Instalar dependencias automáticamente
 pip install -r requirements.txt
@@ -147,36 +147,43 @@ python main.py
 ```
 W-T-F ( Weekend Trading Finance )/
 │
-├── 📁 src/                          # Código fuente principal
-│   ├── 📁 models/                   # Modelos de datos y lógica
-│   │   ├── 🤖 ai_analyzer.py      # Motor de análisis AI
-│   │   ├── 💾 trading_model_with_db.py  # Modelo con persistencia
-│   │   └── 📊 trading_model.py    # Modelo base de trading
+├── 📁 src/                             # Código fuente principal
+│   ├── 📁 models/                      # Modelos de datos y lógica
+│   │   ├── 🤖 ai_analyzer.py           # Motor de análisis AI
+│   │   ├── 📊 trading_model.py         # Modelo base de trading
+│   │   └── 💾 trading_model_with_db.py # Modelo con persistencia en SQLite
 │   │
-│   ├── 📁 ui/                     # Interfaz de usuario
-│   │   ├── 🎨 enhanced_chart_widget.py  # Gráficos interactivos
-│   │   ├── 📋 summary_panel.py   # Panel de resumen dinámico
-│   │   ├── 📊 trading_table.py   # Tabla editable
-│   │   ├── 📱 main_menu.py        # Menú principal
-│   │   └── 💰 capital_dialog.py   # Diálogo de capital
+│   ├── 📁 ui/                          # Interfaz de usuario (PyQt5)
+│   │   ├── 💰 capital_dialog.py        # Diálogo para capital inicial/edición
+│   │   ├── 📈 chart_widget.py          # Widget de gráfico
+│   │   ├── 📅 day_capital_dialog.py    # Diálogo de edición por día
+│   │   ├── 🎨 enhanced_chart_widget.py # Gráficos interactivos mejorados
+│   │   ├── 📤 export_dialog.py         # Diálogo de exportación
+│   │   ├── 📂 load_week_dialog.py      # Diálogo para cargar semanas guardadas
+│   │   ├── 🧭 main_menu.py             # Barra de menú principal (modo claro/oscuro)
+│   │   ├── 📋 summary_panel.py         # Panel de resumen semanal
+│   │   └── 📊 trading_table.py         # Tabla editable de operaciones
 │   │
-│   ├── 📁 database/               # Persistencia de datos
-│   │   └── 💾 database_manager.py # Administrador SQLite
+│   ├── 📁 database/                    # Persistencia de datos
+│   │   └── 💾 database_manager.py      # Administrador de SQLite
 │   │
-│   ├── 📁 styles/                 # Temas y estilos
-│   │   └── 🎨 themes.py          # Gestor de temas dinámicos
+│   ├── 📁 styles/                      # Temas y estilos
+│   │   └── 🎨 themes.py                # Gestor de temas (claro/oscuro)
 │   │
-│   ├── 📁 utils/                  # Utilidades
-  │   ├── 💡 advice.py          # Generador de consejos
-  │   └── 📤 export_manager.py   # Sistema de exportación
-  │
-  ├── 📁 dialogs/                # Diálogos modulares
-  │   └── 📤 export_dialog.py    # Diálogo de exportación
+│   ├── 📁 images/                      # Recursos gráficos
+│   │   └── 🔗 socials/                 # Iconos de redes sociales (Acerca de)
+│   │
+│   └── 📁 utils/                       # Utilidades
+│       ├── 💡 advice.py                # Generador de consejos diarios
+│       ├── 📤 export_manager.py        # Sistema de exportación (Excel/CSV/JSON)
+│       └── 🌐 i18n.py                  # Internacionalización y textos
 │
-├── 🚀 main.py                     # Punto de entrada principal
-├── 📋 requirements.txt            # Dependencias del proyecto
-├── 💾 trading_data.db              # Base de datos (auto-generada)
-└── 📖 README.md                   # Documentación
+├── 📁 scripts/                         # Scripts auxiliares
+├── 📁 Weekend-Saved/                   # Semanas guardadas
+├── 🚀 main.py                          # Punto de entrada principal
+├── 📋 requirements.txt                 # Dependencias del proyecto
+├── 🧹 .gitignore                        # Reglas de exclusión Git
+└── 📖 README.md                        # Documentación
 ```
 
 ---
@@ -232,20 +239,14 @@ W-T-F ( Weekend Trading Finance )/
 
 ---
 
-## 🚀 Próximas Características (Roadmap 2024)
+## 🚀 Próximas Características (Roadmap 2026)
 
-### 🎯 Versión 2.1 - ✅ Implementada
-- [x] 📊 **Exportación Excel/CSV/JSON**: Comparte tus análisis con un clic
+### 🔮 Versión 2.3 - En Planificación
 - [ ] 🏦 **Múltiples cuentas**: Gestiona varios portafolios
-- [ ] 📈 **Análisis histórico**: Tendencias a largo plazo
 - [ ] 🔔 **Notificaciones inteligentes**: Alertas personalizadas
-
-### 🔮 Versión 2.2 - En Planificación
 - [ ] 🌐 **Modo web**: Acceso desde cualquier dispositivo
 - [ ] 📱 **App móvil**: Sincronización con escritorio
 - [ ] 🌍 **Multi-idioma**: Soporte para más idiomas
-
-> Nota: La integración con **APIs de trading** ha sido descartada de la versión 2.2 por decisión de alcance. Nos enfocamos en modo web, app móvil y multi-idioma.
 
 ---
 
@@ -261,7 +262,7 @@ W-T-F ( Weekend Trading Finance )/
 5. **📋 Abre** un Pull Request
 
 ### 🏷️ Tipos de Contribuciones Bienvenidas
-- 🐛 **Reportar bugs**: Ayúdanos a mejorar
+- 🐛 **Reportar bugs**: Ayúdame a mejorar
 - 💡 **Sugerir features**: Tu idea puede ser la próxima gran función
 - 🎨 **Mejorar UI/UX**: Házlo más hermoso y usable
 - 📖 **Documentación**: Mejora esta guía
@@ -273,15 +274,12 @@ W-T-F ( Weekend Trading Finance )/
 
 ### 💬 ¿Necesitas Ayuda?
 - 📖 **Lee este README**: La respuesta puede estar aquí
-- 🐛 **Reporta issues**: Usa la sección de Issues
-- 💡 **Pregunta en Discussions**: Comunidad activa
-- 📧 **Contacto directo**: [Tu email aquí]
+- 📧 **Contacto directo**: **Redes Sociales**
 
 ### 🌟 Apoya el Proyecto
 - ⭐ **Da una estrella**: Si te gusta el proyecto
 - 🍴 **Haz fork**: Para tu propio uso
 - 📤 **Comparte**: Con otros traders
-- 💖 **Donaciones**: Si quieres apoyar el desarrollo
 
 ---
 
@@ -329,7 +327,7 @@ Gracias a todos los que han contribuido a hacer este proyecto mejor:
 
 ---
 
-**Desarrollado con ❤️ por la comunidad de trading**
+**Desarrollado con ❤️ por OnelCrack Trading**
 
 *"Gestiona tu trading como un profesional, sin complicaciones"*
 

@@ -502,7 +502,6 @@ class ThemeManager:
                     background-color: transparent;
                     padding: 6px 12px;
                     border-radius: 4px;
-                    spacing: 3px;
                 }
                 
                 QMenuBar::item:selected {
@@ -518,11 +517,11 @@ class ThemeManager:
                     color: #e0e0e0;
                     border: 1px solid #3a3a3a;
                     border-radius: 4px;
-                    padding: 4px;
+                    padding: 5px;
                 }
                 
                 QMenu::item {
-                    padding: 8px 24px 8px 12px;
+                    padding: 8px 20px;
                     border-radius: 3px;
                 }
                 
@@ -537,7 +536,7 @@ class ThemeManager:
                 QMenu::separator {
                     height: 1px;
                     background-color: #3a3a3a;
-                    margin: 4px 0;
+                    margin: 5px 10px;
                 }
             """
         else:

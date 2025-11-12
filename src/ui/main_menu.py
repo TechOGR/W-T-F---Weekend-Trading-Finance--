@@ -3,9 +3,10 @@ Menú principal con opción de modo oscuro
 """
 
 from PyQt5.QtWidgets import (QMenuBar, QMenu, QAction, QMessageBox, QFileDialog,
-                             QApplication, QStyle)
-from PyQt5.QtCore import pyqtSignal, Qt
-from PyQt5.QtGui import QIcon, QKeySequence, QPixmap
+                             QApplication, QStyle, QDialog, QVBoxLayout, QLabel,
+                             QPushButton, QHBoxLayout)
+from PyQt5.QtCore import pyqtSignal, Qt, QUrl, QSize
+from PyQt5.QtGui import QIcon, QKeySequence, QPixmap, QDesktopServices
 import os
 import sys
 from src.utils.i18n import tr, set_language as set_global_language
@@ -407,7 +408,9 @@ class MainMenuBar(QMenuBar):
                 <li>✅ Exportación de datos</li>
             </ul>
             <p><strong>Tecnologías:</strong> Python, PyQt5, Matplotlib, SQLite</p>
+            <p><strong>Creado por:</strong> Onel Crack</p>
             """
+            social_label_text = "Sígueme en:"
         else:
             content = """
             <h3>W-T-F (Weekend Trading Finance) Manager</h3>
@@ -424,8 +427,130 @@ class MainMenuBar(QMenuBar):
                 <li>✅ Data export</li>
             </ul>
             <p><strong>Tech:</strong> Python, PyQt5, Matplotlib, SQLite</p>
+            <p><strong>Created by:</strong> Onel Crack</p>
             """
-        QMessageBox.about(self, title, content)
+            social_label_text = "Follow me on:"
+
+        # Crear diálogo personalizado
+        dialog = QDialog(self)
+        dialog.setWindowTitle(title)
+        dialog.setModal(True)
+
+        main_layout = QVBoxLayout()
+        main_layout.setContentsMargins(20, 20, 20, 20)
+        main_layout.setSpacing(12)
+
+        # Contenido principal
+        content_label = QLabel(content)
+        content_label.setTextFormat(Qt.RichText)
+        content_label.setWordWrap(True)
+        content_label.setOpenExternalLinks(True)
+        main_layout.addWidget(content_label)
+
+        # Etiqueta de redes sociales
+        social_label = QLabel(f"<strong>{social_label_text}</strong>")
+        main_layout.addWidget(social_label)
+
+        # Botones de redes sociales
+        buttons_layout = QHBoxLayout()
+        buttons_layout.setSpacing(10)
+
+        # Utilidad: localizar iconos en src/images/socials
+        def _icons_dir():
+            src_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            return os.path.join(src_dir, 'images', 'socials')
+
+        def _find_icon_path(base_name):
+            dir_path = _icons_dir()
+            candidates = [
+                f"{base_name}.png", f"{base_name}.svg", f"{base_name}.jpg", f"{base_name}.ico"
+            ]
+            for fname in candidates:
+                path = os.path.join(dir_path, fname)
+                if os.path.isfile(path):
+                    return path
+            # Búsqueda flexible por nombre contenido
+            try:
+                for fname in os.listdir(dir_path):
+                    lower = fname.lower()
+                    if base_name in lower and os.path.isfile(os.path.join(dir_path, fname)):
+                        return os.path.join(dir_path, fname)
+            except Exception:
+                pass
+            return None
+
+        def make_social_button(text, bg_color, url, icon_base=None):
+            btn = QPushButton(text)
+            btn.setCursor(Qt.PointingHandCursor)
+            btn.setToolTip(url)
+            btn.clicked.connect(lambda: QDesktopServices.openUrl(QUrl(url)))
+            # Estilo por red + modo
+            base_style = (
+                "QPushButton {"
+                f"background-color: {bg_color};"
+                "color: white; border: none; padding: 8px 12px;"
+                "border-radius: 6px; font-weight: bold; }"
+                "QPushButton:hover { border: 2px solid white; }"
+            )
+            btn.setStyleSheet(base_style)
+            # Icono si existe
+            if icon_base:
+                icon_path = _find_icon_path(icon_base)
+                if icon_path:
+                    btn.setIcon(QIcon(icon_path))
+                    btn.setIconSize(QSize(20, 20))
+            return btn
+
+        # URLs estimadas basadas en el nombre (actualízalas si es necesario)
+        telegram_url = "https://t.me/onel_crack"
+        youtube_url = "https://www.youtube.com/@OnelCrack"
+        facebook_url = "https://www.facebook.com/profile.php?id=61570586445561"
+        instagram_url = "https://www.instagram.com/onel_crack"
+        github_url = "https://github.com/TechOGR"
+
+        # Crear botones con emojis
+        btn_telegram = make_social_button("Telegram", "#0088cc", telegram_url, icon_base="telegram")
+        btn_youtube = make_social_button("YouTube", "#FF0000", youtube_url, icon_base="youtube")
+        btn_facebook = make_social_button("Facebook", "#1877F2", facebook_url, icon_base="facebook")
+        btn_instagram = make_social_button("Instagram", "#C13584", instagram_url, icon_base="instagram")
+        btn_github = make_social_button("GitHub", "#24292e", github_url, icon_base="github")
+
+        buttons_layout.addWidget(btn_telegram)
+        buttons_layout.addWidget(btn_youtube)
+        buttons_layout.addWidget(btn_facebook)
+        buttons_layout.addWidget(btn_instagram)
+        buttons_layout.addWidget(btn_github)
+        buttons_layout.addStretch()
+
+        main_layout.addLayout(buttons_layout)
+
+        # Botón cerrar
+        close_text = tr('close') if hasattr(self, 'current_language') else 'Cerrar'
+        close_btn = QPushButton(close_text or 'Cerrar')
+        close_btn.setCursor(Qt.PointingHandCursor)
+        close_btn.clicked.connect(dialog.accept)
+        close_btn.setStyleSheet(
+            "QPushButton { background-color: #7f8c8d; color: white; border: none;"
+            "padding: 8px 16px; border-radius: 6px; font-weight: bold; }"
+            "QPushButton:hover { background-color: #95a5a6; }"
+            "QPushButton:pressed { background-color: #707b7c; }"
+        )
+        main_layout.addWidget(close_btn, alignment=Qt.AlignRight)
+
+        # Aplicar estilo según tema
+        if getattr(self, 'dark_mode', False):
+            dialog.setStyleSheet(
+                "QDialog { background-color: #1e1e1e; }"
+                "QLabel { color: #e0e0e0; }"
+            )
+        else:
+            dialog.setStyleSheet(
+                "QDialog { background-color: #ffffff; }"
+                "QLabel { color: #2c3e50; }"
+            )
+
+        dialog.setLayout(main_layout)
+        dialog.exec_()
     
     def show_instructions(self):
         """Mostrar instrucciones de uso"""
